@@ -1,0 +1,677 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4D0CA173288AF4CC00353383 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CA172288AF4CC00353383 /* AppDelegate.swift */; };
+		4D0CA175288AF4CC00353383 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CA174288AF4CC00353383 /* SceneDelegate.swift */; };
+		4D0CA177288AF4CC00353383 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CA176288AF4CC00353383 /* ViewController.swift */; };
+		4D0CA17A288AF4CC00353383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D0CA178288AF4CC00353383 /* Main.storyboard */; };
+		4D0CA17C288AF4CE00353383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D0CA17B288AF4CE00353383 /* Assets.xcassets */; };
+		4D0CA17F288AF4CE00353383 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D0CA17D288AF4CE00353383 /* LaunchScreen.storyboard */; };
+		4D0CA18A288AF4CE00353383 /* HopiModalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CA189288AF4CE00353383 /* HopiModalTests.swift */; };
+		4D0CA194288AF4CE00353383 /* HopiModalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CA193288AF4CE00353383 /* HopiModalUITests.swift */; };
+		4D0CA196288AF4CE00353383 /* HopiModalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CA195288AF4CE00353383 /* HopiModalUITestsLaunchTests.swift */; };
+		4D0CA1A4288AF59D00353383 /* HopiModalInPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CA1A3288AF59D00353383 /* HopiModalInPage.swift */; };
+		4D4D396A288DA7D7009EE6E1 /* GalleryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D3968288DA7D7009EE6E1 /* GalleryVC.swift */; };
+		4D4D396B288DA7D7009EE6E1 /* GalleryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4D3969288DA7D7009EE6E1 /* GalleryVC.xib */; };
+		4D4D396F288DB028009EE6E1 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D396D288DB028009EE6E1 /* ImageCell.swift */; };
+		4D4D3970288DB028009EE6E1 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4D396E288DB028009EE6E1 /* ImageCell.xib */; };
+		4D7BA59F2895519500454648 /* Scrollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7BA59E2895519500454648 /* Scrollable.swift */; };
+		4D8E1723288D6D1D00C61D12 /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E1721288D6D1D00C61D12 /* ProductDetailVC.swift */; };
+		4D8E1724288D6D1D00C61D12 /* ProductDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8E1722288D6D1D00C61D12 /* ProductDetailVC.xib */; };
+		4D8E1727288D702B00C61D12 /* HopiContentContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E1725288D702B00C61D12 /* HopiContentContainerViewController.swift */; };
+		4D8E1728288D702B00C61D12 /* HopiContentContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8E1726288D702B00C61D12 /* HopiContentContainerViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4D0CA186288AF4CE00353383 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D0CA167288AF4CC00353383 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4D0CA16E288AF4CC00353383;
+			remoteInfo = HopiModal;
+		};
+		4D0CA190288AF4CE00353383 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D0CA167288AF4CC00353383 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4D0CA16E288AF4CC00353383;
+			remoteInfo = HopiModal;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4D0CA16F288AF4CC00353383 /* HopiModal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HopiModal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D0CA172288AF4CC00353383 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4D0CA174288AF4CC00353383 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4D0CA176288AF4CC00353383 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4D0CA179288AF4CC00353383 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4D0CA17B288AF4CE00353383 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4D0CA17E288AF4CE00353383 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4D0CA180288AF4CE00353383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D0CA185288AF4CE00353383 /* HopiModalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopiModalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D0CA189288AF4CE00353383 /* HopiModalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopiModalTests.swift; sourceTree = "<group>"; };
+		4D0CA18F288AF4CE00353383 /* HopiModalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopiModalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D0CA193288AF4CE00353383 /* HopiModalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopiModalUITests.swift; sourceTree = "<group>"; };
+		4D0CA195288AF4CE00353383 /* HopiModalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopiModalUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4D0CA1A3288AF59D00353383 /* HopiModalInPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopiModalInPage.swift; sourceTree = "<group>"; };
+		4D4D3968288DA7D7009EE6E1 /* GalleryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryVC.swift; sourceTree = "<group>"; };
+		4D4D3969288DA7D7009EE6E1 /* GalleryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryVC.xib; sourceTree = "<group>"; };
+		4D4D396D288DB028009EE6E1 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		4D4D396E288DB028009EE6E1 /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
+		4D7BA59E2895519500454648 /* Scrollable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scrollable.swift; sourceTree = "<group>"; };
+		4D8E1721288D6D1D00C61D12 /* ProductDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailVC.swift; sourceTree = "<group>"; };
+		4D8E1722288D6D1D00C61D12 /* ProductDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailVC.xib; sourceTree = "<group>"; };
+		4D8E1725288D702B00C61D12 /* HopiContentContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopiContentContainerViewController.swift; sourceTree = "<group>"; };
+		4D8E1726288D702B00C61D12 /* HopiContentContainerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HopiContentContainerViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4D0CA16C288AF4CC00353383 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D0CA182288AF4CE00353383 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D0CA18C288AF4CE00353383 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4D0CA166288AF4CC00353383 = {
+			isa = PBXGroup;
+			children = (
+				4D0CA171288AF4CC00353383 /* HopiModal */,
+				4D0CA188288AF4CE00353383 /* HopiModalTests */,
+				4D0CA192288AF4CE00353383 /* HopiModalUITests */,
+				4D0CA170288AF4CC00353383 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4D0CA170288AF4CC00353383 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4D0CA16F288AF4CC00353383 /* HopiModal.app */,
+				4D0CA185288AF4CE00353383 /* HopiModalTests.xctest */,
+				4D0CA18F288AF4CE00353383 /* HopiModalUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4D0CA171288AF4CC00353383 /* HopiModal */ = {
+			isa = PBXGroup;
+			children = (
+				4D0CA1A2288AF50200353383 /* HopiModal */,
+				4D0CA172288AF4CC00353383 /* AppDelegate.swift */,
+				4D0CA174288AF4CC00353383 /* SceneDelegate.swift */,
+				4D0CA176288AF4CC00353383 /* ViewController.swift */,
+				4D0CA178288AF4CC00353383 /* Main.storyboard */,
+				4D0CA17B288AF4CE00353383 /* Assets.xcassets */,
+				4D0CA17D288AF4CE00353383 /* LaunchScreen.storyboard */,
+				4D0CA180288AF4CE00353383 /* Info.plist */,
+				4D8E1721288D6D1D00C61D12 /* ProductDetailVC.swift */,
+				4D8E1722288D6D1D00C61D12 /* ProductDetailVC.xib */,
+				4D4D3968288DA7D7009EE6E1 /* GalleryVC.swift */,
+				4D4D3969288DA7D7009EE6E1 /* GalleryVC.xib */,
+				4D4D396C288DAF86009EE6E1 /* Gallery */,
+			);
+			path = HopiModal;
+			sourceTree = "<group>";
+		};
+		4D0CA188288AF4CE00353383 /* HopiModalTests */ = {
+			isa = PBXGroup;
+			children = (
+				4D0CA189288AF4CE00353383 /* HopiModalTests.swift */,
+			);
+			path = HopiModalTests;
+			sourceTree = "<group>";
+		};
+		4D0CA192288AF4CE00353383 /* HopiModalUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4D0CA193288AF4CE00353383 /* HopiModalUITests.swift */,
+				4D0CA195288AF4CE00353383 /* HopiModalUITestsLaunchTests.swift */,
+			);
+			path = HopiModalUITests;
+			sourceTree = "<group>";
+		};
+		4D0CA1A2288AF50200353383 /* HopiModal */ = {
+			isa = PBXGroup;
+			children = (
+				4D0CA1A5288AF5A500353383 /* Views */,
+				4D0CA1A3288AF59D00353383 /* HopiModalInPage.swift */,
+			);
+			path = HopiModal;
+			sourceTree = "<group>";
+		};
+		4D0CA1A5288AF5A500353383 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4D7BA59D2895516B00454648 /* Base */,
+				4D8E1725288D702B00C61D12 /* HopiContentContainerViewController.swift */,
+				4D8E1726288D702B00C61D12 /* HopiContentContainerViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4D4D396C288DAF86009EE6E1 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				4D4D396D288DB028009EE6E1 /* ImageCell.swift */,
+				4D4D396E288DB028009EE6E1 /* ImageCell.xib */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		4D7BA59D2895516B00454648 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				4D7BA59E2895519500454648 /* Scrollable.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4D0CA16E288AF4CC00353383 /* HopiModal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D0CA199288AF4CE00353383 /* Build configuration list for PBXNativeTarget "HopiModal" */;
+			buildPhases = (
+				4D0CA16B288AF4CC00353383 /* Sources */,
+				4D0CA16C288AF4CC00353383 /* Frameworks */,
+				4D0CA16D288AF4CC00353383 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HopiModal;
+			productName = HopiModal;
+			productReference = 4D0CA16F288AF4CC00353383 /* HopiModal.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4D0CA184288AF4CE00353383 /* HopiModalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D0CA19C288AF4CE00353383 /* Build configuration list for PBXNativeTarget "HopiModalTests" */;
+			buildPhases = (
+				4D0CA181288AF4CE00353383 /* Sources */,
+				4D0CA182288AF4CE00353383 /* Frameworks */,
+				4D0CA183288AF4CE00353383 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4D0CA187288AF4CE00353383 /* PBXTargetDependency */,
+			);
+			name = HopiModalTests;
+			productName = HopiModalTests;
+			productReference = 4D0CA185288AF4CE00353383 /* HopiModalTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4D0CA18E288AF4CE00353383 /* HopiModalUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D0CA19F288AF4CE00353383 /* Build configuration list for PBXNativeTarget "HopiModalUITests" */;
+			buildPhases = (
+				4D0CA18B288AF4CE00353383 /* Sources */,
+				4D0CA18C288AF4CE00353383 /* Frameworks */,
+				4D0CA18D288AF4CE00353383 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4D0CA191288AF4CE00353383 /* PBXTargetDependency */,
+			);
+			name = HopiModalUITests;
+			productName = HopiModalUITests;
+			productReference = 4D0CA18F288AF4CE00353383 /* HopiModalUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4D0CA167288AF4CC00353383 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					4D0CA16E288AF4CC00353383 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					4D0CA184288AF4CE00353383 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 4D0CA16E288AF4CC00353383;
+					};
+					4D0CA18E288AF4CE00353383 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 4D0CA16E288AF4CC00353383;
+					};
+				};
+			};
+			buildConfigurationList = 4D0CA16A288AF4CC00353383 /* Build configuration list for PBXProject "HopiModal" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4D0CA166288AF4CC00353383;
+			productRefGroup = 4D0CA170288AF4CC00353383 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4D0CA16E288AF4CC00353383 /* HopiModal */,
+				4D0CA184288AF4CE00353383 /* HopiModalTests */,
+				4D0CA18E288AF4CE00353383 /* HopiModalUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4D0CA16D288AF4CC00353383 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D0CA17F288AF4CE00353383 /* LaunchScreen.storyboard in Resources */,
+				4D4D396B288DA7D7009EE6E1 /* GalleryVC.xib in Resources */,
+				4D4D3970288DB028009EE6E1 /* ImageCell.xib in Resources */,
+				4D8E1724288D6D1D00C61D12 /* ProductDetailVC.xib in Resources */,
+				4D8E1728288D702B00C61D12 /* HopiContentContainerViewController.xib in Resources */,
+				4D0CA17C288AF4CE00353383 /* Assets.xcassets in Resources */,
+				4D0CA17A288AF4CC00353383 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D0CA183288AF4CE00353383 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D0CA18D288AF4CE00353383 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4D0CA16B288AF4CC00353383 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D8E1723288D6D1D00C61D12 /* ProductDetailVC.swift in Sources */,
+				4D0CA177288AF4CC00353383 /* ViewController.swift in Sources */,
+				4D8E1727288D702B00C61D12 /* HopiContentContainerViewController.swift in Sources */,
+				4D0CA1A4288AF59D00353383 /* HopiModalInPage.swift in Sources */,
+				4D0CA173288AF4CC00353383 /* AppDelegate.swift in Sources */,
+				4D4D396F288DB028009EE6E1 /* ImageCell.swift in Sources */,
+				4D4D396A288DA7D7009EE6E1 /* GalleryVC.swift in Sources */,
+				4D7BA59F2895519500454648 /* Scrollable.swift in Sources */,
+				4D0CA175288AF4CC00353383 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D0CA181288AF4CE00353383 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D0CA18A288AF4CE00353383 /* HopiModalTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D0CA18B288AF4CE00353383 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D0CA196288AF4CE00353383 /* HopiModalUITestsLaunchTests.swift in Sources */,
+				4D0CA194288AF4CE00353383 /* HopiModalUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4D0CA187288AF4CE00353383 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4D0CA16E288AF4CC00353383 /* HopiModal */;
+			targetProxy = 4D0CA186288AF4CE00353383 /* PBXContainerItemProxy */;
+		};
+		4D0CA191288AF4CE00353383 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4D0CA16E288AF4CC00353383 /* HopiModal */;
+			targetProxy = 4D0CA190288AF4CE00353383 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4D0CA178288AF4CC00353383 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D0CA179288AF4CC00353383 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4D0CA17D288AF4CE00353383 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D0CA17E288AF4CE00353383 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4D0CA197288AF4CE00353383 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4D0CA198288AF4CE00353383 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4D0CA19A288AF4CE00353383 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FCMRLFUFXA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HopiModal/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kaya.HopiModal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4D0CA19B288AF4CE00353383 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FCMRLFUFXA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HopiModal/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kaya.HopiModal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4D0CA19D288AF4CE00353383 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kaya.HopiModalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HopiModal.app/HopiModal";
+			};
+			name = Debug;
+		};
+		4D0CA19E288AF4CE00353383 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kaya.HopiModalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HopiModal.app/HopiModal";
+			};
+			name = Release;
+		};
+		4D0CA1A0288AF4CE00353383 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kaya.HopiModalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HopiModal;
+			};
+			name = Debug;
+		};
+		4D0CA1A1288AF4CE00353383 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kaya.HopiModalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HopiModal;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4D0CA16A288AF4CC00353383 /* Build configuration list for PBXProject "HopiModal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D0CA197288AF4CE00353383 /* Debug */,
+				4D0CA198288AF4CE00353383 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D0CA199288AF4CE00353383 /* Build configuration list for PBXNativeTarget "HopiModal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D0CA19A288AF4CE00353383 /* Debug */,
+				4D0CA19B288AF4CE00353383 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D0CA19C288AF4CE00353383 /* Build configuration list for PBXNativeTarget "HopiModalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D0CA19D288AF4CE00353383 /* Debug */,
+				4D0CA19E288AF4CE00353383 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D0CA19F288AF4CE00353383 /* Build configuration list for PBXNativeTarget "HopiModalUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D0CA1A0288AF4CE00353383 /* Debug */,
+				4D0CA1A1288AF4CE00353383 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4D0CA167288AF4CC00353383 /* Project object */;
+}
