@@ -7,12 +7,17 @@
 
 import UIKit
 
+protocol GalleryVCDelegate: AnyObject {
+    func closeFullsize()
+}
+
 final class GalleryVC: BaseBackgroundViewController {
-    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     let imageList = [UIImage(named: "steveUncle"), UIImage(named: "steveUncle") ,UIImage(named: "steveUncle")]
     
     private var heightHolder: CGFloat = 0
+    weak var delegate: GalleryVCDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +62,10 @@ final class GalleryVC: BaseBackgroundViewController {
                 cell.setHeight(height: height)
             }
         }
+    }
+    
+    @IBAction func closeAction(_ sender: Any) {
+        delegate?.closeFullsize()
     }
 }
 

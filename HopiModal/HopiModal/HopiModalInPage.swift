@@ -30,7 +30,7 @@ final class HopiModalInPage: HopiModulateable {
     func createPage(content: UIViewController, gallery: BaseBackgroundViewController, target: UIViewController) {
         targetVC = target
         let rootVC = HopiContentContainerViewController()
-        rootVC.setupContent(contentContainer: content, galleryContainer: gallery)
+        rootVC.setupContent(contentContainer: content, galleryContainer: gallery, sizes: [.fixed(411), .fullscreen])
         rootVC.modalPresentationStyle = .overFullScreen
         rootVC.delegate = self
         target.present(rootVC, animated: true) { [weak self] in

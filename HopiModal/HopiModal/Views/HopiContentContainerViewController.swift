@@ -14,8 +14,12 @@ extension HopiContentContainerViewControllerDelegate {
     func activityEventListener(event: HopiModalInPageEventType) {}
 }
 
+//enum HopiContentSizeType {
+//    case fullSize, minumumSize, openingHeight, fullSizeContent
+//}
+
 enum HopiContentSizeType {
-    case fullSize, minumumSize, openingHeight, fullSizeContent
+    case fixed(CGFloat), percent(Float), fullscreen
 }
 
 enum HopiModalInPageEventType {
@@ -23,7 +27,7 @@ enum HopiModalInPageEventType {
 }
 
 protocol HopiControllerSlidable {
-    func setupContent(contentContainer: UIViewController, galleryContainer: BaseBackgroundViewController)
+    func setupContent(contentContainer: UIViewController, galleryContainer: BaseBackgroundViewController, sizes: [HopiContentSizeType])
 }
 
 final class HopiContentContainerViewController: UIViewController, HopiControllerSlidable {
@@ -33,20 +37,30 @@ final class HopiContentContainerViewController: UIViewController, HopiController
     
     weak var delegate: HopiContentContainerViewControllerDelegate?
     
+    @IBOutlet weak var closeButton: UIButton!
     private var panGesture = UIPanGestureRecognizer()
     // content olarak yüklenen view hareketi için bu view özelinde tutulur.
     private var contentVCHolder: UIViewController?
     private var galleryVCHolder: BaseBackgroundViewController?
+    private var galleryCellHeight: CGFloat = .zero
+    private var negativeSpace: CGFloat = 120
     
     private weak var dragView: UIView?
     private var beginningPosition: CGPoint = .zero
     
     private var timer: Timer?
     
+    public var orderedSizes: [HopiContentSizeType] = []
+    public var sizes: [HopiContentSizeType] = [.percent(0.5)] {
+        didSet {
+            self.updateOrderedSizes()
+        }
+    }
     
     private weak var childScrollView: UIScrollView?
     /// If true you can pull using UIControls (so you can grab and drag a button to control the sheet)
     public var shouldRecognizePanGestureWithUIControls: Bool = true
+    public var shouldRecognizeTapGestureForGallery: Bool = true
     
     private var scrollDirection:ScrollDirection = .up
     
@@ -66,7 +80,9 @@ final class HopiContentContainerViewController: UIViewController, HopiController
 
 // MARK: - sheet common logic
 extension HopiContentContainerViewController {
-    func setupContent(contentContainer: UIViewController, galleryContainer: BaseBackgroundViewController) {
+    func setupContent(contentContainer: UIViewController, galleryContainer: BaseBackgroundViewController, sizes: [HopiContentSizeType]) {
+        self.sizes = sizes
+        self.closeButton.layer.zPosition = 10
         setupGalleryContainer(galleryContainer)
         setupContentContainer(contentContainer)
         
@@ -74,17 +90,44 @@ extension HopiContentContainerViewController {
             handleScrollView(content.tableView)
         }
     }
+    
+    private func updateOrderedSizes() {
+        var concreteSizes: [(HopiContentSizeType, CGFloat)] = self.sizes.map {
+            return ($0, self.height(for: $0))
+        }
+        concreteSizes.sort { $0.1 < $1.1 }
+        self.orderedSizes = concreteSizes.map({ size, _ in size })
+        self.galleryCellHeight = self.view.bounds.height - self.height(for: self.orderedSizes.first) + negativeSpace
+    }
+        
+    private func height(for size: HopiContentSizeType?) -> CGFloat {
+        guard let size = size else { return 0 }
+        let contentHeight: CGFloat
+        let fullscreenHeight: CGFloat = self.view.bounds.height - 150
+        switch (size) {
+            case .fixed(let height):
+                contentHeight = height
+            case .fullscreen:
+                contentHeight = fullscreenHeight
+            case .percent(let percent):
+                contentHeight = (self.view.bounds.height) * CGFloat(percent)
+        }
+        return min(fullscreenHeight, contentHeight)
+    }
 }
 
 // MARK: - Dragable Contanier
 extension HopiContentContainerViewController {
     private func setupContentContainer(_ targetController: UIViewController) {
         contentVCHolder = targetController
+        
+        let firstHeight = self.height(for: self.orderedSizes.first)
         var newBounds = self.view.bounds
-        newBounds.origin.y = self.view.frame.size.height
-        newBounds.size.height -= 120
+        newBounds.origin.y = self.view.frame.size.height - firstHeight + negativeSpace
+        newBounds.size.height = firstHeight 
         
         targetController.view.frame = newBounds
+        targetController.view.layer.zPosition = 2
         view.addSubview(targetController.view)
         targetController.didMove(toParent: self)
         
@@ -95,7 +138,7 @@ extension HopiContentContainerViewController {
         targetController.view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         dragView = targetController.view
         
-        firstOpenAnimation(dragView)
+        firstOpenAnimation(dragView, height: firstHeight)
         panGestureSetup()
     }
     
@@ -105,13 +148,13 @@ extension HopiContentContainerViewController {
         dragView?.addGestureRecognizer(panGesture)
     }
     
-    private func firstOpenAnimation(_ contentView: UIView? ) {
+    private func firstOpenAnimation(_ contentView: UIView?, height: CGFloat) {
         guard let contentView = contentView else {
             return
         }
         contentView.alpha = 0
         UIView.animate(withDuration: 0.3) {
-            contentView.frame.origin.y = 120
+            contentView.frame.origin.y = self.view.frame.height - height
             contentView.alpha = 1
         }
     }
@@ -146,19 +189,25 @@ extension HopiContentContainerViewController: UIGestureRecognizerDelegate {
 
 extension HopiContentContainerViewController {
     @objc private func draggedView(_ gestureRecognizer: UIGestureRecognizer) {
+        
+        let minHeight: CGFloat = self.height(for: self.orderedSizes.first)
+        let maxHeight: CGFloat = self.height(for: self.orderedSizes.last)
+
         if let touchedView = gestureRecognizer.view {
+            let locationInView = gestureRecognizer.location(in: touchedView)
+            let yPos = touchedView.frame.origin.y + locationInView.y - beginningPosition.y
+            let galleryHeight = (yPos >= minHeight ? self.view.frame.height - minHeight : self.view.frame.height - maxHeight) + negativeSpace
+            
             if gestureRecognizer.state == .began {
                 beginningPosition = gestureRecognizer.location(in: touchedView)
             } else if gestureRecognizer.state == .changed {
-                let locationInView = gestureRecognizer.location(in: touchedView)
-                let yPos = touchedView.frame.origin.y + locationInView.y - beginningPosition.y
                 if 120 <= yPos {
                     touchedView.frame.origin = CGPoint(x: 0, y: yPos)
                     if self.view.frame.size.height - yPos > 280 {
                         touchedView.frame.size.height = self.view.frame.size.height - yPos
                     }
                     print("XYZ: \(self.className) height: \(self.view.frame.size.height - yPos)")
-                    galleryVCHolder?.areaOfViewable(height: yPos)
+                    galleryVCHolder?.areaOfViewable(height: yPos + negativeSpace)
                     touchedView.layoutIfNeeded()
                 }else {
                     touchedView.frame.origin = CGPoint(x: 0, y: 120)
@@ -168,8 +217,8 @@ extension HopiContentContainerViewController {
                 
                 if self.view.frame.size.height - 120 < touchedView.frame.origin.y {
                     let firstPos = self.view.frame.size.height - 120
-                    let diff = firstPos - touchedView.frame.origin.y
-                    let alphaRatio = firstPos / diff
+//                    let diff = firstPos - touchedView.frame.origin.y
+//                    let alphaRatio = firstPos / diff
                     //touchedView.alpha = alphaRatio
                     print("XYZ: Position: \(firstPos) : \(touchedView.frame.origin.y)")
                     //print("XYZ alpha: \(alphaRatio)")
@@ -191,10 +240,10 @@ extension HopiContentContainerViewController {
                     }
                     
                 }else {
-                    galleryVCHolder?.setAnimation(height: 120, duration: 0.3)
+                    galleryVCHolder?.setAnimation(height: galleryHeight, duration: 0.3)
                     UIView.animate(withDuration: 0.3) {
-                        touchedView.frame.origin.y = 120
-                        touchedView.frame.size.height = self.view.frame.size.height - touchedView.frame.origin.y
+                        touchedView.frame.origin.y = yPos >= minHeight ? self.view.frame.size.height - minHeight : self.view.frame.size.height - maxHeight
+                        touchedView.frame.size.height = yPos >= minHeight ? minHeight : maxHeight
                         touchedView.alpha = 1
                         touchedView.layoutIfNeeded()
                         self.delegate?.activityEventListener(event: .didChangeInModalPos(y: touchedView.frame.origin.y))
@@ -209,17 +258,59 @@ extension HopiContentContainerViewController {
 }
 
 // MARK: - Gallery Container
-extension HopiContentContainerViewController {
+extension HopiContentContainerViewController: GalleryVCDelegate {
     private func setupGalleryContainer(_ galleryContainer: BaseBackgroundViewController) {
         galleryVCHolder = galleryContainer
         
         let newBounds = self.view.bounds
         //newBounds.size.height = 120
         galleryContainer.view.frame = newBounds
+        galleryContainer.view.layer.zPosition = 1
         view.addSubview(galleryContainer.view)
         galleryContainer.didMove(toParent: self)
         
         galleryContainer.view.layer.masksToBounds = true
         galleryContainer.view.clipsToBounds = true
+        
+        if let gallery = galleryVCHolder as? GalleryVC {
+            gallery.delegate = self
+        }
+        
+        DispatchQueue.main.async {
+            galleryContainer.areaOfViewable(height: self.galleryCellHeight)
+        }
+        
+        if shouldRecognizeTapGestureForGallery {
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(fullScreenGallery))
+            galleryContainer.view.addGestureRecognizer(tapGesture)
+        }
+    }
+    
+    @objc func fullScreenGallery() {
+        guard let contentVC = self.contentVCHolder else { return }
+        UIView.animate(withDuration: 0.3) {
+            contentVC.view.frame.origin.y = self.view.frame.size.height
+            contentVC.view.frame.size.height = self.view.frame.size.height - (contentVC.view.frame.origin.y)
+            contentVC.view.alpha = 0
+            self.delegate?.activityEventListener(event: .didChangeInModalPos(y: contentVC.view.frame.origin.y))
+        } completion: { act in
+            self.delegate?.activityEventListener(event: .didChangeInModalPos(y: contentVC.view.frame.origin.y))
+        }
+        galleryVCHolder?.setAnimation(height: self.view.frame.size.height, duration: 0.3)
+    }
+    
+    func closeFullsize() {
+        guard let contentVC = self.contentVCHolder else { return }
+        let firstHeight: CGFloat = self.height(for: self.orderedSizes.first)
+        UIView.animate(withDuration: 0.3) {
+            contentVC.view.frame.origin.y = self.view.frame.size.height - firstHeight
+            contentVC.view.frame.size.height = firstHeight
+            contentVC.view.alpha = 1
+            contentVC.view.layoutIfNeeded()
+            self.delegate?.activityEventListener(event: .didChangeInModalPos(y: contentVC.view.frame.origin.y))
+        } completion: { act in
+            self.delegate?.activityEventListener(event: .didChangeInModalPos(y: contentVC.view.frame.origin.y))
+        }
+        galleryVCHolder?.setAnimation(height: galleryCellHeight, duration: 0.3)
     }
 }
