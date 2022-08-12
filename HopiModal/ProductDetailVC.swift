@@ -44,7 +44,7 @@ extension ProductDetailVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
-        cell.textLabel?.text = "HEllooooooooo \(indexPath.row)"
+        cell.textLabel?.text = "Hellooooooooo \(indexPath.row)"
         return cell
     }
 }
