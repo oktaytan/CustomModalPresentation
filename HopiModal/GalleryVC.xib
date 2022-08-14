@@ -53,6 +53,14 @@
                         <action selector="closeAction:" destination="-1" eventType="touchUpInside" id="eAa-Ry-gLa"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1XC-fI-TCc">
+                    <rect key="frame" x="20" y="74" width="61.5" height="31"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Kapat"/>
+                    <connections>
+                        <action selector="closeButtonEvent:" destination="-1" eventType="touchUpInside" id="ie5-7W-tFz"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemMintColor"/>
@@ -63,11 +71,13 @@
                 <constraint firstItem="xwb-tw-iQJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="USv-kl-1KE"/>
                 <constraint firstAttribute="bottom" secondItem="xwb-tw-iQJ" secondAttribute="bottom" id="W8d-6v-VAn"/>
                 <constraint firstItem="0HP-7B-jqv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ahM-FH-9OQ"/>
+                <constraint firstItem="1XC-fI-TCc" firstAttribute="top" secondItem="0HP-7B-jqv" secondAttribute="bottom" constant="20" id="fWB-Hi-nya"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="AG5-LQ-Ra1" secondAttribute="bottom" constant="2" id="mhm-7h-tsJ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OYA-0L-7du" secondAttribute="trailing" constant="20" id="n4c-sK-6p1"/>
                 <constraint firstItem="AG5-LQ-Ra1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="tZ6-gt-GVF"/>
                 <constraint firstItem="xwb-tw-iQJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tdP-XI-eio"/>
                 <constraint firstItem="xwb-tw-iQJ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="tjY-5D-pcN"/>
+                <constraint firstItem="1XC-fI-TCc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="vbK-VQ-0py"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="87.723214285714278"/>
         </view>

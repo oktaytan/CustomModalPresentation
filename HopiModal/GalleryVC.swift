@@ -8,7 +8,11 @@
 import UIKit
 
 protocol GalleryVCDelegate: AnyObject {
-    func closeFullsize()
+    func galleryUserActivity(event: GalleryUserActivityEvent)
+}
+
+enum GalleryUserActivityEvent {
+    case closeFullSize, dismiss
 }
 
 final class GalleryVC: BaseBackgroundViewController {
@@ -65,8 +69,13 @@ final class GalleryVC: BaseBackgroundViewController {
     }
     
     @IBAction func closeAction(_ sender: Any) {
-        delegate?.closeFullsize()
+        delegate?.galleryUserActivity(event: .closeFullSize)
     }
+    
+    @IBAction func closeButtonEvent(_ sender: Any) {
+        delegate?.galleryUserActivity(event: .dismiss)
+    }
+    
 }
 
 extension GalleryVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
