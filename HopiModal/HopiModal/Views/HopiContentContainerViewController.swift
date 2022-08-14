@@ -14,7 +14,7 @@ extension HopiContentContainerViewControllerDelegate {
     func activityEventListener(event: HopiModalInPageEventType) {}
 }
 
-enum HopiContentSizeType {
+enum HopiContentSizeType: Equatable {
     case fixed(CGFloat), percent(Float), fullscreen
 }
 
@@ -186,15 +186,9 @@ extension HopiContentContainerViewController: UIGestureRecognizerDelegate {
         guard let panGestureRecognizer = gestureRecognizer as? InitialTouchPanGestureRecognizer, let childScrollView = self.childScrollView, let point = panGestureRecognizer.initialTouchLocation else { return true }
         
         let pointInChildScrollView = (self.dragView?.convert(point, to: childScrollView).y ?? 0) - childScrollView.contentOffset.y
-        let velocity = panGestureRecognizer.velocity(in: panGestureRecognizer.view?.superview)
-        
         guard pointInChildScrollView > 0, pointInChildScrollView < childScrollView.bounds.height else { return true }
         
-        let topInset = childScrollView.contentInset.top
-        
-        guard abs(velocity.y) > abs(velocity.x), childScrollView.contentOffset.y <= -topInset else { return false }
-        
-        if velocity.y < 0 {
+        if self.currentSize != self.orderedSizes.last {
             let containerHeight = height(for: self.currentSize)
             return height(for: self.orderedSizes.last) > containerHeight && containerHeight < height(for: .fullscreen)
         } else {
@@ -237,12 +231,12 @@ extension HopiContentContainerViewController {
                 
                 if 150 <= yPos {
                     touchedView.frame.origin = CGPoint(x: 0, y: yPos)
-                    if self.view.frame.size.height - yPos > 280 {
+                    if self.view.frame.size.height - yPos > 0 {
                         touchedView.frame.size.height = newHeight
                     }
                     galleryVCHolder?.areaOfViewable(height: yPos + negativeSpace)
                     touchedView.layoutIfNeeded()
-                }else {
+                } else {
                     touchedView.frame.origin = CGPoint(x: 0, y: 150)
                     touchedView.frame.size.height = self.view.frame.size.height - 150
                     touchedView.layoutIfNeeded()
